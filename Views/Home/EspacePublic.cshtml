@@ -1,0 +1,71 @@
+﻿
+@model CandidaturesEnligne.Models.Candidat
+@{
+    ViewBag.Title = "Candidateur Page";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Candidate Application</title>
+    <link rel="stylesheet" href="~/Content/Site.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="mt-5">Candidate Application</h1>
+   
+        <form action="Ajouter" id="myForm" method="post" enctype="multipart/form-data" class="mt-4">
+            <div class="form-group">
+                <label for="nom">Nom:</label>
+                <input type="text" id="nom" name="Nom" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="prenom">Prénom:</label>
+                <input type="text" id="prenom" name="Prenom" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="mail">Mail:</label>
+                <input type="email" id="mail" name="Mail" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="telephone">Téléphone:</label>
+                <input type="tel" id="telephone" name="Telephone" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="niveauEtude">Niveau d'étude:</label>
+                <input type="text" id="niveauEtude" name="NiveauDetude" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="anneesExperience">Nombre d'années d'expérience:</label>
+                <input type="number" id="anneesExperience" min="0" name="Experiance" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="dernierEmployeur">Dernier employeur:</label>
+                <input type="text" id="dernierEmployeur" name="DernierEmployeur" required class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="CVFile">CV:</label>
+                <input type="file" id="CVFile" name="CVFile" accept=".pdf, .jpg, .jpeg, .png" required class="form-control-file">
+            </div>
+            <button type="submit" class="btn btn-primary">Soumettre</button>
+            @if (ViewBag.ConfirmationMessage != null)
+            {
+                <div class="alert alert-success m-2" role="alert">
+                    <strong> @ViewBag.ConfirmationMessage</strong>
+                </div>
+            }
+            <a href="Index" class="btn btn-outline-info m-1">Home Page</a>
+        </form>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+<script>
+</script>
+<script src="~/Scripts/jquery-3.4.1.min.js"></script>
+<script src="~/Scripts/jquery.validate.min.js"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
